@@ -1,22 +1,303 @@
-<mxfile host="Electron" modified="2023-10-07T13:57:47.627Z" agent="Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) draw.io/22.0.2 Chrome/114.0.5735.289 Electron/25.8.4 Safari/537.36" etag="D_-PolyskMQKUo8f4dgG" version="22.0.2" type="device" pages="2">
+<mxfile host="Electron" modified="2023-10-08T14:07:42.028Z" agent="Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) draw.io/22.0.2 Chrome/114.0.5735.289 Electron/25.8.4 Safari/537.36" etag="9lIRNvAfvbe-pcZDHDLK" version="22.0.2" type="device" pages="3">
   <diagram id="e93IcI-MJFnCfA2EzT78" name="项目描述">
-    <mxGraphModel dx="1147" dy="675" grid="0" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="827" pageHeight="1169" math="0" shadow="0">
+    <mxGraphModel dx="1418" dy="828" grid="0" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="827" pageHeight="1169" math="0" shadow="0">
       <root>
         <mxCell id="0" />
         <mxCell id="1" parent="0" />
-        <mxCell id="fuctLoXxBBdLHn9VDC2X-2" value="&lt;font style=&quot;font-size: 21px;&quot;&gt;基于消息队列的分布式压测平台&lt;br&gt;&lt;br&gt;平台主要的作用是压测 压测不知道干啥的自己抽自己两巴掌清醒清醒&lt;br&gt;&lt;br&gt;该平台主要有三种角色：被测者也是任务的发布者、测试者也就是任务的执行者；最后一种是系统内部维护的操作的管理员。&lt;br&gt;&lt;br&gt;整个平台的生命周期是：&lt;br&gt;任务的发布者发布任务（task）到任务大厅，任务的测试者可以在任务大厅接受任务，接受任务之后在任务到开始时间的时候就循环向被测端发送测试请求。&lt;br&gt;&lt;br&gt;任务发布者的主要逻辑：&lt;br&gt;发布任务、开始-暂停-结束任务、查看测试结果。&lt;br&gt;&lt;br&gt;任务测试者的主要逻辑：&lt;br&gt;接受任务、测试任务、领取报酬、接受的任务列表。&lt;br&gt;&lt;br&gt;内部系统管理员：&lt;br&gt;公告系统、内部邮箱系统、对用户的管理、对任务的管理、（这一部分不应该在这个里面，但是我们这个为了省事就放在这个里面吧）对内部服务器集群的管理(包括=集群节点添加、自动扩容阈值设置、服务器节点的强制下线等)&lt;br&gt;&lt;br&gt;任务主要包括：&lt;br&gt;任务脚本（&lt;b&gt;这里面还有好大一坨东西，到时候再细分&lt;/b&gt;）、任务报酬&lt;br&gt;&lt;br&gt;用户主要包括：&lt;br&gt;账号、密码、电话等基本信息就不说了、用户角色、角色对应权限&lt;br&gt;&lt;/font&gt;" style="text;html=1;strokeColor=none;fillColor=none;align=left;verticalAlign=top;whiteSpace=wrap;rounded=0;" vertex="1" parent="1">
+        <mxCell id="fuctLoXxBBdLHn9VDC2X-2" value="&lt;font style=&quot;font-size: 21px;&quot;&gt;基于消息队列的分布式压测平台&lt;br&gt;&lt;br&gt;平台主要的作用是压测 压测不知道干啥的自己抽自己两巴掌清醒清醒&lt;br&gt;&lt;br&gt;该平台主要有三种角色：被测者也是任务的发布者、测试者也就是任务的执行者；最后一种是系统内部维护的操作的管理员。&lt;br&gt;&lt;br&gt;整个平台的生命周期是：&lt;br&gt;任务的发布者发布任务（task）到任务大厅，任务的测试者可以在任务大厅接受任务，接受任务之后在任务到开始时间的时候就循环向被测端发送测试请求。&lt;br&gt;&lt;br&gt;任务发布者的主要逻辑：&lt;br&gt;发布任务、开始-暂停-结束任务、查看测试结果。&lt;br&gt;&lt;br&gt;任务测试者的主要逻辑：&lt;br&gt;接受任务、测试任务、领取报酬、接受的任务列表。&lt;br&gt;&lt;br&gt;内部系统管理员：&lt;br&gt;公告系统、内部邮箱系统、对用户的管理、对任务的管理、（这一部分不应该在这个里面，但是我们这个为了省事就放在这个里面吧）对内部服务器集群的管理(包括=集群节点添加、自动扩容阈值设置、服务器节点的强制下线等)&lt;br&gt;&lt;br&gt;任务主要包括：&lt;br&gt;任务脚本（&lt;b&gt;这里面还有好大一坨东西，到时候再细分&lt;/b&gt;）、任务报酬&lt;br&gt;&lt;br&gt;用户主要包括：&lt;br&gt;账号、密码、电话等基本信息就不说了、用户角色、角色对应权限&lt;br&gt;&lt;/font&gt;" style="text;html=1;strokeColor=none;fillColor=none;align=left;verticalAlign=top;whiteSpace=wrap;rounded=0;" parent="1" vertex="1">
           <mxGeometry x="91" y="17" width="618" height="948" as="geometry" />
         </mxCell>
       </root>
     </mxGraphModel>
   </diagram>
   <diagram id="jsTF7Q35z3WFqcnOTKCR" name="开发规范">
-    <mxGraphModel dx="819" dy="482" grid="0" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="827" pageHeight="1169" math="0" shadow="0">
+    <mxGraphModel dx="1434" dy="844" grid="0" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="827" pageHeight="1169" math="0" shadow="0">
       <root>
         <mxCell id="0" />
         <mxCell id="1" parent="0" />
-        <mxCell id="i_YRKT2P5MIiZlZf3QZu-1" value="&lt;b&gt;代码开发规范&lt;/b&gt;&lt;br&gt;前端：我也不知道、杨春泉自己填&lt;br&gt;&lt;br&gt;后端：java代码开发规范 驼峰啥的我就不多赘述了 直接上工具&lt;br&gt;idea的插件：打开 IDEA ，选择 File - Settings - Plugins 搜索alibaba ，你就可以看到一个叫&lt;br&gt;Alibaba Java Coding Guidelines的东西，下载然后如果你的代码不规范 他会有波浪线提示你。&lt;br&gt;&lt;br&gt;&lt;b&gt;github&lt;br&gt;&lt;/b&gt;前端H5地址：https://github.com/yxl1014/My-College-Life-Is-Over_Front-End-H5&lt;br&gt;前端安卓地址：暂时还没有建 等H5的做完了 酌情考虑&lt;br&gt;后端地址：https://github.com/yxl1014/My-College-Life-Is-Over_Rear-End&lt;br&gt;&lt;br&gt;开发流程：&lt;br&gt;本地开发再dev分支下开发，当在dev分支下开发完且自测完（使用postman，网址：https://www.postman.com/）没有问题，再将代码合并到test分支下，由到时候bugdone单子中的测试人员测，测试完确定没有问题之后，再将代码合并到main分支下。（&lt;i&gt;谁测试的代码合并到main分支下之后发现还有bug的有惩罚&lt;/i&gt;）。&lt;br&gt;&lt;br&gt;git命令：我找都懒得给你们找&amp;nbsp;https://zhuanlan.zhihu.com/p/22494724 我随便找的&lt;br&gt;&lt;br&gt;git提交规范：&lt;br&gt;git的commit不是让你写first commit的；每次提交git需要在git当中写上单子的编号、模块、日期、完成了什么东西。（&lt;i&gt;谁提交的不规范有惩罚&lt;/i&gt;）&lt;br&gt;例子：&lt;br&gt;&lt;font style=&quot;&quot; color=&quot;#ff0000&quot;&gt;#1 [项目整体设计][准备工作][2023.10.7] 项目的描述以及开发规范&lt;/font&gt;&lt;br&gt;&lt;br&gt;&lt;b&gt;开发过程中随手记文档&lt;br&gt;&lt;/b&gt;公司中有wiki给你记，但是咱就懒得弄了，到时候我git上专门整个地方放这些文档。&lt;br&gt;&lt;br&gt;总结什么情况下需要记wiki：&lt;br&gt;1、你在开发过程中遇到了bug，并且解决了。那么就把这个bug：什么时候出现的、怎么出现的、造成的影响、怎么解决的写成文档。&lt;br&gt;2、你在开发过程中对需求的拆分、接口文档、表的设计这些都要记。&lt;br&gt;&lt;br&gt;&lt;b&gt;工期&lt;br&gt;&lt;/b&gt;这个工期当然不是死的，因为我们的项目不是很急，但是到公司中可不会像我这样。&lt;br&gt;在给你们分单子的时候我肯定会问你们多就能完成，然后单子里会有起始日期，不要和我谈意外，在你估算工期的时候就把你的意外加上，你在工作中也会遇到意外，但是领导不会管你，这会影响你的绩效（就是你的工资、奖金、晋升）。&lt;i&gt;咱们自己定的工期内没有完成有惩罚。&lt;/i&gt;&lt;br&gt;&lt;br&gt;&lt;br&gt;&lt;b&gt;惩罚制度&lt;br&gt;&lt;/b&gt;公司里的惩罚制度就是扣钱呗，我们的惩罚采用积分制度，满10分请全组人喝奶茶。&lt;br&gt;惩罚等级有五级：&lt;br&gt;1级记1分，包括：git提交不规范，未完待续。。。&lt;br&gt;2级记2分，包括：单子超工期未完成，未完待续。。。&lt;br&gt;3级记3分，包括：main分支下有bug，未完待续。。。&lt;br&gt;4级记4分，包括：未完待续。。。&lt;br&gt;5级记5分，包括：未完待续。。。" style="text;html=1;strokeColor=none;fillColor=none;align=left;verticalAlign=top;whiteSpace=wrap;rounded=0;" vertex="1" parent="1">
+        <mxCell id="i_YRKT2P5MIiZlZf3QZu-1" value="&lt;b&gt;代码开发规范&lt;/b&gt;&lt;br&gt;前端：我也不知道、杨春泉自己填&lt;br&gt;&lt;br&gt;后端：java代码开发规范 驼峰啥的我就不多赘述了 直接上工具&lt;br&gt;idea的插件：打开 IDEA ，选择 File - Settings - Plugins 搜索alibaba ，你就可以看到一个叫&lt;br&gt;Alibaba Java Coding Guidelines的东西，下载然后如果你的代码不规范 他会有波浪线提示你。&lt;br&gt;&lt;br&gt;&lt;b&gt;github&lt;br&gt;&lt;/b&gt;前端H5地址：https://github.com/yxl1014/My-College-Life-Is-Over_Front-End-H5&lt;br&gt;前端安卓地址：暂时还没有建 等H5的做完了 酌情考虑&lt;br&gt;后端地址：https://github.com/yxl1014/My-College-Life-Is-Over_Rear-End&lt;br&gt;&lt;br&gt;开发流程：&lt;br&gt;本地开发再dev分支下开发，当在dev分支下开发完且自测完（使用postman，网址：https://www.postman.com/）没有问题，再将代码合并到test分支下，由到时候bugdone单子中的测试人员测，测试完确定没有问题之后，再将代码合并到main分支下。（&lt;i&gt;谁测试的代码合并到main分支下之后发现还有bug的有惩罚&lt;/i&gt;）。&lt;br&gt;&lt;br&gt;git命令：我找都懒得给你们找&amp;nbsp;https://zhuanlan.zhihu.com/p/22494724 我随便找的&lt;br&gt;&lt;br&gt;git提交规范：&lt;br&gt;git的commit不是让你写first commit的；每次提交git需要在git当中写上单子的编号、模块、日期、完成了什么东西。（&lt;i&gt;谁提交的不规范有惩罚&lt;/i&gt;）&lt;br&gt;例子：&lt;br&gt;&lt;font style=&quot;&quot; color=&quot;#ff0000&quot;&gt;#1 [项目整体设计][准备工作][2023.10.7] 项目的描述以及开发规范&lt;/font&gt;&lt;br&gt;&lt;br&gt;&lt;b&gt;开发过程中随手记文档&lt;br&gt;&lt;/b&gt;公司中有wiki给你记，但是咱就懒得弄了，到时候我git上专门整个地方放这些文档。&lt;br&gt;&lt;br&gt;总结什么情况下需要记wiki：&lt;br&gt;1、你在开发过程中遇到了bug，并且解决了。那么就把这个bug：什么时候出现的、怎么出现的、造成的影响、怎么解决的写成文档。&lt;br&gt;2、你在开发过程中对需求的拆分、接口文档、表的设计这些都要记。&lt;br&gt;&lt;br&gt;&lt;b&gt;工期&lt;br&gt;&lt;/b&gt;这个工期当然不是死的，因为我们的项目不是很急，但是到公司中可不会像我这样。&lt;br&gt;在给你们分单子的时候我肯定会问你们多就能完成，然后单子里会有起始日期，不要和我谈意外，在你估算工期的时候就把你的意外加上，你在工作中也会遇到意外，但是领导不会管你，这会影响你的绩效（就是你的工资、奖金、晋升）。&lt;i&gt;咱们自己定的工期内没有完成有惩罚。&lt;/i&gt;&lt;br&gt;&lt;br&gt;&lt;br&gt;&lt;b&gt;惩罚制度&lt;br&gt;&lt;/b&gt;公司里的惩罚制度就是扣钱呗，我们的惩罚采用积分制度，满10分请全组人喝奶茶。&lt;br&gt;惩罚等级有五级：&lt;br&gt;1级记1分，包括：git提交不规范，未完待续。。。&lt;br&gt;2级记2分，包括：单子超工期未完成，未完待续。。。&lt;br&gt;3级记3分，包括：main分支下有bug，未完待续。。。&lt;br&gt;4级记4分，包括：未完待续。。。&lt;br&gt;5级记5分，包括：未完待续。。。" style="text;html=1;strokeColor=none;fillColor=none;align=left;verticalAlign=top;whiteSpace=wrap;rounded=0;" parent="1" vertex="1">
           <mxGeometry x="72" y="94" width="508" height="807" as="geometry" />
+        </mxCell>
+      </root>
+    </mxGraphModel>
+  </diagram>
+  <diagram id="lq4U8tXuIceRSV-_nsnC" name="架构图">
+    <mxGraphModel dx="2245" dy="828" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="827" pageHeight="1169" math="0" shadow="0">
+      <root>
+        <mxCell id="0" />
+        <mxCell id="1" parent="0" />
+        <mxCell id="2pyaXQm_XIRDp5u9_Im--2" value="中台" style="rounded=0;whiteSpace=wrap;html=1;verticalAlign=top;" parent="1" vertex="1">
+          <mxGeometry x="270" y="130" width="850" height="780" as="geometry" />
+        </mxCell>
+        <mxCell id="2pyaXQm_XIRDp5u9_Im--7" value="集群组件" style="rounded=0;whiteSpace=wrap;html=1;verticalAlign=top;" parent="1" vertex="1">
+          <mxGeometry x="280" y="200" width="410" height="330" as="geometry" />
+        </mxCell>
+        <mxCell id="2pyaXQm_XIRDp5u9_Im--1" value="" style="rounded=0;whiteSpace=wrap;html=1;" parent="1" vertex="1">
+          <mxGeometry x="294" y="250" width="306" height="230" as="geometry" />
+        </mxCell>
+        <mxCell id="2pyaXQm_XIRDp5u9_Im--3" value="" style="rounded=0;whiteSpace=wrap;html=1;" parent="1" vertex="1">
+          <mxGeometry x="310" y="260" width="306" height="230" as="geometry" />
+        </mxCell>
+        <mxCell id="2pyaXQm_XIRDp5u9_Im--4" value="" style="rounded=0;whiteSpace=wrap;html=1;" parent="1" vertex="1">
+          <mxGeometry x="330" y="270" width="306" height="230" as="geometry" />
+        </mxCell>
+        <mxCell id="2pyaXQm_XIRDp5u9_Im--5" value="" style="rounded=0;whiteSpace=wrap;html=1;" parent="1" vertex="1">
+          <mxGeometry x="350" y="280" width="306" height="230" as="geometry" />
+        </mxCell>
+        <mxCell id="2pyaXQm_XIRDp5u9_Im--6" value="平台主逻辑节点" style="rounded=0;whiteSpace=wrap;html=1;" parent="1" vertex="1">
+          <mxGeometry x="370" y="290" width="306" height="230" as="geometry" />
+        </mxCell>
+        <mxCell id="2pyaXQm_XIRDp5u9_Im--8" value="平台管理组件" style="rounded=0;whiteSpace=wrap;html=1;" parent="1" vertex="1">
+          <mxGeometry x="840" y="200" width="150" height="50" as="geometry" />
+        </mxCell>
+        <mxCell id="2pyaXQm_XIRDp5u9_Im--10" value="集群组件" style="rounded=0;whiteSpace=wrap;html=1;verticalAlign=top;" parent="1" vertex="1">
+          <mxGeometry x="280" y="550" width="410" height="330" as="geometry" />
+        </mxCell>
+        <mxCell id="2pyaXQm_XIRDp5u9_Im--11" value="" style="rounded=0;whiteSpace=wrap;html=1;" parent="1" vertex="1">
+          <mxGeometry x="294" y="600" width="306" height="230" as="geometry" />
+        </mxCell>
+        <mxCell id="2pyaXQm_XIRDp5u9_Im--12" value="" style="rounded=0;whiteSpace=wrap;html=1;" parent="1" vertex="1">
+          <mxGeometry x="310" y="610" width="306" height="230" as="geometry" />
+        </mxCell>
+        <mxCell id="2pyaXQm_XIRDp5u9_Im--13" value="" style="rounded=0;whiteSpace=wrap;html=1;" parent="1" vertex="1">
+          <mxGeometry x="330" y="620" width="306" height="230" as="geometry" />
+        </mxCell>
+        <mxCell id="2pyaXQm_XIRDp5u9_Im--14" value="" style="rounded=0;whiteSpace=wrap;html=1;" parent="1" vertex="1">
+          <mxGeometry x="350" y="630" width="306" height="230" as="geometry" />
+        </mxCell>
+        <mxCell id="2pyaXQm_XIRDp5u9_Im--15" value="异步处理节点" style="rounded=0;whiteSpace=wrap;html=1;" parent="1" vertex="1">
+          <mxGeometry x="370" y="640" width="306" height="230" as="geometry" />
+        </mxCell>
+        <mxCell id="2pyaXQm_XIRDp5u9_Im--16" value="集群管理组件" style="rounded=0;whiteSpace=wrap;html=1;" parent="1" vertex="1">
+          <mxGeometry x="840" y="310" width="150" height="50" as="geometry" />
+        </mxCell>
+        <mxCell id="2pyaXQm_XIRDp5u9_Im--17" value="总体架构" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;fontStyle=1;fontSize=16;" parent="1" vertex="1">
+          <mxGeometry x="270" y="90" width="110" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="2pyaXQm_XIRDp5u9_Im--18" value="节点详解" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;fontStyle=1;fontSize=16;" parent="1" vertex="1">
+          <mxGeometry x="270" y="1030" width="110" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="2pyaXQm_XIRDp5u9_Im--19" value="集群组件" style="rounded=0;whiteSpace=wrap;html=1;verticalAlign=top;" parent="1" vertex="1">
+          <mxGeometry x="130" y="1080" width="410" height="330" as="geometry" />
+        </mxCell>
+        <mxCell id="2pyaXQm_XIRDp5u9_Im--20" value="节点管理&lt;br&gt;&lt;br&gt;1、配置动态修改（如添加一个新的节点）&lt;br&gt;2、节点自动上下线&lt;br&gt;3、节点状态维护（心跳包，断线自动重连）" style="rounded=0;whiteSpace=wrap;html=1;verticalAlign=top;fontColor=#FF0000;" parent="1" vertex="1">
+          <mxGeometry x="160" y="1109" width="100" height="170" as="geometry" />
+        </mxCell>
+        <mxCell id="2pyaXQm_XIRDp5u9_Im--21" value="负载均衡网关" style="rounded=0;whiteSpace=wrap;html=1;" parent="1" vertex="1">
+          <mxGeometry x="380" y="1109" width="120" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="2pyaXQm_XIRDp5u9_Im--22" value="负载均衡网关" style="rounded=0;whiteSpace=wrap;html=1;" parent="1" vertex="1">
+          <mxGeometry x="390" y="1120" width="120" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="2pyaXQm_XIRDp5u9_Im--24" value="负载均衡网关" style="rounded=0;whiteSpace=wrap;html=1;" parent="1" vertex="1">
+          <mxGeometry x="400" y="1130" width="120" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="2pyaXQm_XIRDp5u9_Im--25" value="负载均衡网关" style="rounded=0;whiteSpace=wrap;html=1;" parent="1" vertex="1">
+          <mxGeometry x="410" y="1140" width="120" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="2pyaXQm_XIRDp5u9_Im--28" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" parent="1" source="2pyaXQm_XIRDp5u9_Im--26" target="2pyaXQm_XIRDp5u9_Im--27" edge="1">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="ncNe_x-5aG21ydGgdJZb-50" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;entryX=0;entryY=0.5;entryDx=0;entryDy=0;" parent="1" source="2pyaXQm_XIRDp5u9_Im--26" target="ncNe_x-5aG21ydGgdJZb-51" edge="1">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="580" y="1330" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="2pyaXQm_XIRDp5u9_Im--26" value="负载均衡节点" style="rounded=0;whiteSpace=wrap;html=1;" parent="1" vertex="1">
+          <mxGeometry x="420" y="1150" width="120" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="k4SlAETV9YQRv2QD1uIc-2" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" parent="1" source="2pyaXQm_XIRDp5u9_Im--27" target="k4SlAETV9YQRv2QD1uIc-1" edge="1">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="2pyaXQm_XIRDp5u9_Im--27" value="这个我想做高大上一点，拦截tcp或http包然后分发" style="rounded=0;whiteSpace=wrap;html=1;fontColor=#FF0000;" parent="1" vertex="1">
+          <mxGeometry x="620" y="1150" width="140" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="k4SlAETV9YQRv2QD1uIc-1" value="这个得研究linux内核或者你做个low一点的，就用netty接受http报文，然后转发给节点" style="rounded=0;whiteSpace=wrap;html=1;fontColor=#FF0000;" parent="1" vertex="1">
+          <mxGeometry x="840" y="1150" width="140" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="k4SlAETV9YQRv2QD1uIc-3" value="网关" style="rounded=0;whiteSpace=wrap;html=1;" parent="1" vertex="1">
+          <mxGeometry x="840" y="430" width="150" height="50" as="geometry" />
+        </mxCell>
+        <mxCell id="k4SlAETV9YQRv2QD1uIc-4" value="节点" style="rounded=0;whiteSpace=wrap;html=1;" parent="1" vertex="1">
+          <mxGeometry x="160" y="1300" width="80" height="50" as="geometry" />
+        </mxCell>
+        <mxCell id="k4SlAETV9YQRv2QD1uIc-5" value="节点" style="rounded=0;whiteSpace=wrap;html=1;" parent="1" vertex="1">
+          <mxGeometry x="170" y="1310" width="80" height="50" as="geometry" />
+        </mxCell>
+        <mxCell id="k4SlAETV9YQRv2QD1uIc-6" value="节点" style="rounded=0;whiteSpace=wrap;html=1;" parent="1" vertex="1">
+          <mxGeometry x="180" y="1320" width="80" height="50" as="geometry" />
+        </mxCell>
+        <mxCell id="k4SlAETV9YQRv2QD1uIc-7" value="节点" style="rounded=0;whiteSpace=wrap;html=1;" parent="1" vertex="1">
+          <mxGeometry x="190" y="1330" width="80" height="50" as="geometry" />
+        </mxCell>
+        <mxCell id="k4SlAETV9YQRv2QD1uIc-8" value="节点" style="rounded=0;whiteSpace=wrap;html=1;" parent="1" vertex="1">
+          <mxGeometry x="200" y="1340" width="80" height="50" as="geometry" />
+        </mxCell>
+        <mxCell id="k4SlAETV9YQRv2QD1uIc-9" value="平台主逻辑节点" style="rounded=0;whiteSpace=wrap;html=1;verticalAlign=top;" parent="1" vertex="1">
+          <mxGeometry x="130" y="1460" width="410" height="560" as="geometry" />
+        </mxCell>
+        <mxCell id="k4SlAETV9YQRv2QD1uIc-10" value="各种controller" style="rounded=0;whiteSpace=wrap;html=1;" parent="1" vertex="1">
+          <mxGeometry x="160" y="1500" width="120" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="ncNe_x-5aG21ydGgdJZb-1" value="公告组件" style="rounded=0;whiteSpace=wrap;html=1;" parent="1" vertex="1">
+          <mxGeometry x="390" y="1500" width="120" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="ncNe_x-5aG21ydGgdJZb-2" value="邮件组件" style="rounded=0;whiteSpace=wrap;html=1;" parent="1" vertex="1">
+          <mxGeometry x="390" y="1580" width="120" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="ncNe_x-5aG21ydGgdJZb-15" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" parent="1" source="ncNe_x-5aG21ydGgdJZb-3" target="ncNe_x-5aG21ydGgdJZb-14" edge="1">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="ncNe_x-5aG21ydGgdJZb-3" value="消息队列连接组件" style="rounded=0;whiteSpace=wrap;html=1;" parent="1" vertex="1">
+          <mxGeometry x="160" y="1580" width="120" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="ncNe_x-5aG21ydGgdJZb-4" value="任务脚本处理组件" style="rounded=0;whiteSpace=wrap;html=1;" parent="1" vertex="1">
+          <mxGeometry x="160" y="1670" width="120" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="ncNe_x-5aG21ydGgdJZb-12" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" parent="1" source="ncNe_x-5aG21ydGgdJZb-5" target="ncNe_x-5aG21ydGgdJZb-11" edge="1">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="ncNe_x-5aG21ydGgdJZb-5" value="异步任务组件" style="rounded=0;whiteSpace=wrap;html=1;" parent="1" vertex="1">
+          <mxGeometry x="390" y="1670" width="120" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="ncNe_x-5aG21ydGgdJZb-6" value="日志组件" style="rounded=0;whiteSpace=wrap;html=1;" parent="1" vertex="1">
+          <mxGeometry x="160" y="1750" width="120" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="ncNe_x-5aG21ydGgdJZb-7" value="邮件组件" style="rounded=0;whiteSpace=wrap;html=1;" parent="1" vertex="1">
+          <mxGeometry x="390" y="1754" width="120" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="ncNe_x-5aG21ydGgdJZb-11" value="此队列不是名字里的队列是我们自己做的一个异步任务的队列 我有一个写好的 到时候给你们看一下 优化一下可以直接用" style="rounded=0;whiteSpace=wrap;html=1;" parent="1" vertex="1">
+          <mxGeometry x="590" y="1650" width="150" height="100" as="geometry" />
+        </mxCell>
+        <mxCell id="ncNe_x-5aG21ydGgdJZb-14" value="这个不做硬性要求，可以用现成的" style="rounded=0;whiteSpace=wrap;html=1;" parent="1" vertex="1">
+          <mxGeometry x="-40" y="1580" width="120" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="ncNe_x-5aG21ydGgdJZb-16" value="db" style="shape=cylinder3;whiteSpace=wrap;html=1;boundedLbl=1;backgroundOutline=1;size=15;" parent="1" vertex="1">
+          <mxGeometry y="685" width="60" height="80" as="geometry" />
+        </mxCell>
+        <mxCell id="ncNe_x-5aG21ydGgdJZb-17" value="queue" style="shape=cylinder3;whiteSpace=wrap;html=1;boundedLbl=1;backgroundOutline=1;size=15;" parent="1" vertex="1">
+          <mxGeometry x="80" y="685" width="60" height="80" as="geometry" />
+        </mxCell>
+        <mxCell id="ncNe_x-5aG21ydGgdJZb-18" value="redis" style="shape=cylinder3;whiteSpace=wrap;html=1;boundedLbl=1;backgroundOutline=1;size=15;" parent="1" vertex="1">
+          <mxGeometry x="160" y="685" width="60" height="80" as="geometry" />
+        </mxCell>
+        <mxCell id="ncNe_x-5aG21ydGgdJZb-19" value="缓存组件" style="rounded=0;whiteSpace=wrap;html=1;" parent="1" vertex="1">
+          <mxGeometry x="160" y="1830" width="120" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="ncNe_x-5aG21ydGgdJZb-23" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" parent="1" source="ncNe_x-5aG21ydGgdJZb-20" target="ncNe_x-5aG21ydGgdJZb-22" edge="1">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="ncNe_x-5aG21ydGgdJZb-20" value="网络通信组件" style="rounded=0;whiteSpace=wrap;html=1;" parent="1" vertex="1">
+          <mxGeometry x="390" y="1830" width="120" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="ncNe_x-5aG21ydGgdJZb-25" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" parent="1" source="ncNe_x-5aG21ydGgdJZb-22" target="ncNe_x-5aG21ydGgdJZb-24" edge="1">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="ncNe_x-5aG21ydGgdJZb-22" value="因为要和异步处理节点通信，我考虑使用udp所以需要这个" style="rounded=0;whiteSpace=wrap;html=1;" parent="1" vertex="1">
+          <mxGeometry x="590" y="1820" width="150" height="80" as="geometry" />
+        </mxCell>
+        <mxCell id="ncNe_x-5aG21ydGgdJZb-24" value="这里不知udp，有很多新的协议，想玩可以玩一下" style="rounded=0;whiteSpace=wrap;html=1;" parent="1" vertex="1">
+          <mxGeometry x="820" y="1820" width="150" height="80" as="geometry" />
+        </mxCell>
+        <mxCell id="ncNe_x-5aG21ydGgdJZb-26" value="异步处理节点" style="rounded=0;whiteSpace=wrap;html=1;verticalAlign=top;" parent="1" vertex="1">
+          <mxGeometry x="130" y="2080" width="410" height="290" as="geometry" />
+        </mxCell>
+        <mxCell id="ncNe_x-5aG21ydGgdJZb-27" value="网络通信组件" style="rounded=0;whiteSpace=wrap;html=1;" parent="1" vertex="1">
+          <mxGeometry x="150" y="2120" width="120" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="ncNe_x-5aG21ydGgdJZb-28" value="测试结果处理" style="rounded=0;whiteSpace=wrap;html=1;" parent="1" vertex="1">
+          <mxGeometry x="390" y="2120" width="120" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="ncNe_x-5aG21ydGgdJZb-29" value="结果集处理" style="rounded=0;whiteSpace=wrap;html=1;" parent="1" vertex="1">
+          <mxGeometry x="390" y="2200" width="120" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="ncNe_x-5aG21ydGgdJZb-30" value="db操作组件" style="rounded=0;whiteSpace=wrap;html=1;" parent="1" vertex="1">
+          <mxGeometry x="150" y="2200" width="120" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="ncNe_x-5aG21ydGgdJZb-31" value="奖励分配组件" style="rounded=0;whiteSpace=wrap;html=1;" parent="1" vertex="1">
+          <mxGeometry x="390" y="2280" width="120" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="ncNe_x-5aG21ydGgdJZb-32" value="db操作组件" style="rounded=0;whiteSpace=wrap;html=1;" parent="1" vertex="1">
+          <mxGeometry x="160" y="1930" width="120" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="ncNe_x-5aG21ydGgdJZb-33" value="角色权限组件" style="rounded=0;whiteSpace=wrap;html=1;" parent="1" vertex="1">
+          <mxGeometry x="390" y="1930" width="120" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="ncNe_x-5aG21ydGgdJZb-35" value="" style="endArrow=classic;html=1;rounded=0;fontColor=#000000;labelBackgroundColor=#FFFFFF;strokeColor=#0000FF;" parent="1" edge="1">
+          <mxGeometry width="50" height="50" relative="1" as="geometry">
+            <mxPoint x="-438" y="210" as="sourcePoint" />
+            <mxPoint x="-388" y="160" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="ncNe_x-5aG21ydGgdJZb-36" value="架构导读" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;fontStyle=1;fontSize=16;" parent="1" vertex="1">
+          <mxGeometry x="-460" y="110" width="110" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="ncNe_x-5aG21ydGgdJZb-37" value="请求进来的生命周期 in" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;" parent="1" vertex="1">
+          <mxGeometry x="-340" y="170" width="130" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="ncNe_x-5aG21ydGgdJZb-38" value="User" style="shape=umlActor;verticalLabelPosition=bottom;verticalAlign=top;html=1;outlineConnect=0;" parent="1" vertex="1">
+          <mxGeometry x="1390" y="320" width="30" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="ncNe_x-5aG21ydGgdJZb-39" value="" style="endArrow=classic;html=1;rounded=0;exitX=0;exitY=0.3333333333333333;exitDx=0;exitDy=0;exitPerimeter=0;entryX=1;entryY=0.5;entryDx=0;entryDy=0;strokeColor=#0000FF;" parent="1" source="ncNe_x-5aG21ydGgdJZb-38" target="k4SlAETV9YQRv2QD1uIc-3" edge="1">
+          <mxGeometry width="50" height="50" relative="1" as="geometry">
+            <mxPoint x="1280" y="470" as="sourcePoint" />
+            <mxPoint x="1330" y="420" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="ncNe_x-5aG21ydGgdJZb-40" value="1" style="edgeLabel;html=1;align=center;verticalAlign=middle;resizable=0;points=[];" parent="ncNe_x-5aG21ydGgdJZb-39" vertex="1" connectable="0">
+          <mxGeometry x="-0.0419" y="6" relative="1" as="geometry">
+            <mxPoint as="offset" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="ncNe_x-5aG21ydGgdJZb-41" value="" style="endArrow=classic;html=1;rounded=0;exitX=0;exitY=0.5;exitDx=0;exitDy=0;entryX=0.5;entryY=0;entryDx=0;entryDy=0;strokeColor=#0000FF;" parent="1" source="k4SlAETV9YQRv2QD1uIc-3" target="2pyaXQm_XIRDp5u9_Im--26" edge="1">
+          <mxGeometry width="50" height="50" relative="1" as="geometry">
+            <mxPoint x="1290" y="250" as="sourcePoint" />
+            <mxPoint x="1340" y="200" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="ncNe_x-5aG21ydGgdJZb-42" value="2" style="edgeLabel;html=1;align=center;verticalAlign=middle;resizable=0;points=[];" parent="ncNe_x-5aG21ydGgdJZb-41" vertex="1" connectable="0">
+          <mxGeometry x="-0.548" y="4" relative="1" as="geometry">
+            <mxPoint y="1" as="offset" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="ncNe_x-5aG21ydGgdJZb-43" value="" style="endArrow=classic;html=1;rounded=0;exitX=0.5;exitY=1;exitDx=0;exitDy=0;entryX=0.5;entryY=0;entryDx=0;entryDy=0;strokeColor=#0000FF;" parent="1" source="2pyaXQm_XIRDp5u9_Im--26" target="k4SlAETV9YQRv2QD1uIc-10" edge="1">
+          <mxGeometry width="50" height="50" relative="1" as="geometry">
+            <mxPoint x="680" y="1340" as="sourcePoint" />
+            <mxPoint x="730" y="1290" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="ncNe_x-5aG21ydGgdJZb-44" value="3" style="edgeLabel;html=1;align=center;verticalAlign=middle;resizable=0;points=[];" parent="ncNe_x-5aG21ydGgdJZb-43" vertex="1" connectable="0">
+          <mxGeometry x="0.0185" y="4" relative="1" as="geometry">
+            <mxPoint as="offset" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="ncNe_x-5aG21ydGgdJZb-45" value="" style="endArrow=classic;html=1;rounded=0;exitX=0.5;exitY=0;exitDx=0;exitDy=0;strokeColor=#0000FF;" parent="1" source="ncNe_x-5aG21ydGgdJZb-20" target="2pyaXQm_XIRDp5u9_Im--26" edge="1">
+          <mxGeometry width="50" height="50" relative="1" as="geometry">
+            <mxPoint x="660" y="1600" as="sourcePoint" />
+            <mxPoint x="710" y="1550" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="ncNe_x-5aG21ydGgdJZb-46" value="4" style="edgeLabel;html=1;align=center;verticalAlign=middle;resizable=0;points=[];" parent="ncNe_x-5aG21ydGgdJZb-45" vertex="1" connectable="0">
+          <mxGeometry x="0.3679" y="-1" relative="1" as="geometry">
+            <mxPoint as="offset" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="ncNe_x-5aG21ydGgdJZb-47" value="" style="endArrow=classic;html=1;rounded=0;exitX=0.75;exitY=1;exitDx=0;exitDy=0;strokeColor=#0000FF;" parent="1" source="2pyaXQm_XIRDp5u9_Im--26" target="ncNe_x-5aG21ydGgdJZb-27" edge="1">
+          <mxGeometry width="50" height="50" relative="1" as="geometry">
+            <mxPoint x="700" y="1370" as="sourcePoint" />
+            <mxPoint x="750" y="1320" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="ncNe_x-5aG21ydGgdJZb-49" value="5" style="edgeLabel;html=1;align=center;verticalAlign=middle;resizable=0;points=[];" parent="ncNe_x-5aG21ydGgdJZb-47" vertex="1" connectable="0">
+          <mxGeometry x="0.8515" y="1" relative="1" as="geometry">
+            <mxPoint x="1" as="offset" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="ncNe_x-5aG21ydGgdJZb-51" value="要支持多协议这个也是一个难点" style="rounded=0;whiteSpace=wrap;html=1;fontColor=#FF0000;" parent="1" vertex="1">
+          <mxGeometry x="625" y="1290" width="140" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="ncNe_x-5aG21ydGgdJZb-59" value="&lt;b&gt;开发要求&lt;br&gt;&lt;br&gt;&lt;br&gt;各个组件要求高度解耦，任何组件要求可以即插即用，如网络通讯组件两个逻辑节点都有用，那么他就可以放在一个rpc的api仓库，两边都可以调用，只是应用的配置文件不同。&lt;br&gt;&lt;br&gt;！！！集群组件要求独立：即可以独立达成jar包（就是尽量少的引用其他的包，要干净），我们这个项目里导入了这个组件就是jar包，要求其他的项目导入这个jar包也可以使用我们这个集群组件。&lt;br&gt;&lt;br&gt;规范就不过多赘述了，要求每个方法写上注释，就是javadoc，同时每个class文件需要写上文件头，就是这个东西，让别人知道这个文件是谁加的。&lt;br&gt;&lt;/b&gt;&lt;img alt=&quot;&quot; src=&quot;data:image/png;base64,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&quot;&gt;&lt;br&gt;&lt;b&gt;这个东西idea设置的地方参考网址：https://blog.51cto.com/u_16175432/6910461&lt;br&gt;头里必须包含作者、时间，其他的自己发挥&lt;/b&gt;" style="text;html=1;strokeColor=none;fillColor=none;align=left;verticalAlign=top;whiteSpace=wrap;rounded=0;" parent="1" vertex="1">
+          <mxGeometry x="-530" y="280" width="390" height="460" as="geometry" />
         </mxCell>
       </root>
     </mxGraphModel>
