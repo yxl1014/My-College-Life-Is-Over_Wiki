@@ -62,7 +62,7 @@ create table if not exists transactionrecord
     constraint transactionrecord_user0_null_fk2
         foreign key (receiverId) references user0 (userId)
 )
-    comment '交易记录';
+    comment '交易记录' charset=UTF8;
 
 create index user0_userName_index
     on user0 (userName)
