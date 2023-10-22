@@ -1,0 +1,56 @@
+drop table if exists task;
+create table task
+(
+    task_id           bigint auto_increment
+        primary key,
+    task_name         varchar(255) not null comment '任务名字： ',
+    task_comment      varchar(255) not null comment '任务名字 英文',
+    task_user_id       bigint(20)    not null comment '发布任务者的id',
+    task_protocol      varchar(255) not null comment '任务协议 tcp/udp',
+    target_system_url varchar(255) not null comment '任务测试URL',
+    test_script       text         not null comment '任务脚本代码',
+    concurrent_users  int          not null comment '最大并发用户数',
+    task_current_test_user  int    not null comment '',
+    task_reward       double          not null comment '任务报酬',
+    duration          bigint          not null comment '测试时间 单位s',
+    result            text         not null comment '发布者得到的 结果集',
+    output_directory  varchar(255) not null comment '',
+    status            tinyint(1)   not null,
+    remark            varchar(500) not null comment '备注'
+);
+
+drop table if exists task_result;
+create table task_result
+(
+    task_id    int auto_increment
+        primary key,
+    result_json varchar(50) not null,
+    result_num  int         not null,
+    fail_num    int         not null,
+    success_num int         not null
+);
+
+drop table if exists task_result_list;
+create table task_result_list
+(
+    task_result_ist varchar(255) not null,
+    task_result_num  int          not null
+);
+
+drop table if exists task_script;
+create table task_script
+(
+    script_id      int auto_increment
+        primary key,
+    script_name    varchar(255) not null,
+    script_content text         not null,
+    script_type    varchar(50)  not null,
+    ip             varchar(50)  not null,
+    port           varchar(50)  not null,
+    heads          varchar(255) not null,
+    condition_msg   varchar(255) not null,
+    response_type   int          not null,
+    resp_time       varchar(255) not null,
+    start_time      int          not null,
+    interval_time   int          not null
+);

@@ -1,0 +1,53 @@
+create table TaskResult
+(
+    task_Id             int auto_increment comment '任务ID'
+        primary key,
+    result_Format       varchar(50)  not null comment '返回结果的格式 json xml HTML binary',
+    result_Field_Name   varchar(50)  not null comment '返回的字段名称 比如接口会返回code码 ，data，msg等',
+    result_Field_Type   varchar(20)  not null comment '返回字段类型 code码就是整数integer，data等会是string',
+    result_Field_Detail varchar(255) null comment '返回字段描述（声明简介）可为空',
+    resultNum           int          not null comment '返回结果数',
+    failNum             int          not null comment '测试失败数',
+    successNum          int          not null comment '测试成功数'
+);
+
+create table TaskScript
+(
+    script_Id      int auto_increment comment '脚本id'
+        primary key,
+    script_Name    varchar(255) not null comment '脚本名称',
+    script_Type    varchar(50)  not null comment '压测方式 同一时间，持续一段时间',
+    ip             varchar(50)  not null comment '请求ip',
+    port           varchar(50)  not null comment '请求port',
+    protocol       varchar(50)  not null comment '协议类型',
+    heads          varchar(255) not null comment '报文头信息',
+    script_Content text         not null comment '脚本内容代码',
+    start_Time     int          not null comment '开始时间',
+    stop_Time      int          not null comment '间隔时间'
+);
+
+
+create table Task
+(
+    task_Id           int auto_increment comment '任务id'
+        primary key,
+    task_Name         varchar(255) not null comment '任务名称',
+    task_Nick_Name    varchar(255) not null comment '任务名称(英文)',
+    task_User_Id      int          not null comment '发布者id',
+    task_Http_Method  varchar(255) not null comment 'http方法 post，get，patch等',
+    target_System_Url varchar(255) not null comment '接口测试url',
+    test_Script       text         not null comment '脚本文本代码',
+    concurrent_Users  int          not null comment '并发测试人数',
+    frequency_Value   int          not null comment '时间频率值',
+    time_Unit         varchar(10)  not null comment '时间单位字段 秒 分钟',
+    task_Reward       int          not null comment '任务报酬',
+    duration          int          not null comment '测试时间',
+    time_Unit_Two     varchar(10)  not null comment '时间单位字段 秒 分钟',
+    result            text         not null comment '返回结果数据集',
+    status            varchar(10)  not null comment '任务状态 未开始 进行中 已完成',
+    detail            varchar(500) not null comment '任务详情信息'
+);
+
+
+
+

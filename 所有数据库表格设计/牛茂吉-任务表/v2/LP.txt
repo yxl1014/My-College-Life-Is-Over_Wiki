@@ -1,0 +1,55 @@
+-- MySQL dump 10.13  Distrib 8.1.0, for Linux (x86_64)
+--
+-- Host: localhost    Database: LProject
+-- ------------------------------------------------------
+-- Server version       8.1.0
+
+/*!40101 SET @OLD_CHARACTER_SET_CLIENT=@@CHARACTER_SET_CLIENT */;
+/*!40101 SET @OLD_CHARACTER_SET_RESULTS=@@CHARACTER_SET_RESULTS */;
+/*!40101 SET @OLD_COLLATION_CONNECTION=@@COLLATION_CONNECTION */;
+/*!50503 SET NAMES utf8mb4 */;
+/*!40103 SET @OLD_TIME_ZONE=@@TIME_ZONE */;
+/*!40103 SET TIME_ZONE='+00:00' */;
+/*!40014 SET @OLD_UNIQUE_CHECKS=@@UNIQUE_CHECKS, UNIQUE_CHECKS=0 */;
+/*!40014 SET @OLD_FOREIGN_KEY_CHECKS=@@FOREIGN_KEY_CHECKS, FOREIGN_KEY_CHECKS=0 */;
+/*!40101 SET @OLD_SQL_MODE=@@SQL_MODE, SQL_MODE='NO_AUTO_VALUE_ON_ZERO' */;
+/*!40111 SET @OLD_SQL_NOTES=@@SQL_NOTES, SQL_NOTES=0 */;
+
+--
+-- Dumping data for table `Task`
+--
+
+LOCK TABLES `Task` WRITE;
+/*!40000 ALTER TABLE `Task` DISABLE KEYS */;
+INSERT INTO `Task` VALUES (1,'实时通信应用压力测试','Real time communication application stress testing',123,'post','/demo/communication','Text',1000,1,'秒',250,20,'分钟','Text','已完成','模拟多个用户同时进行实时聊天、视频通话等操作，评估实时通信应用的性能和延迟。'),(2,'购物网站下单并发压力测试','Shopping website ordering and stress testing',456,'post','/demo/shopping','Text',500,2,'秒',66,10,'分钟','Text','进行中','模拟多个用户同时浏览商品、将商品加入购物车，以及提交订单。测试系统在高并发下处理购物流程的性能。'),(3,'用户登录并发压力测试','User login concurrent stress testing',789,'get','/demo/login','Text',2000,10,'秒',100,15,'分钟','Text','已结束','模拟多个并发用户尝试登录系统，评估系统在高并发登录情况下的响应时间和性能。');
+/*!40000 ALTER TABLE `Task` ENABLE KEYS */;
+UNLOCK TABLES;
+
+--
+-- Dumping data for table `TaskResult`
+--
+
+LOCK TABLES `TaskResult` WRITE;
+/*!40000 ALTER TABLE `TaskResult` DISABLE KEYS */;
+INSERT INTO `TaskResult` VALUES (1,'json','code','integer','接口返回code码',1000,200,800),(2,'html','data','string',NULL,500,10,490),(3,'json','msg','string',NULL,2000,100,1900);
+/*!40000 ALTER TABLE `TaskResult` ENABLE KEYS */;
+UNLOCK TABLES;
+
+--
+-- Dumping data for table `TaskScript`
+--
+
+LOCK TABLES `TaskScript` WRITE;
+/*!40000 ALTER TABLE `TaskScript` DISABLE KEYS */;
+INSERT INTO `TaskScript` VALUES (1,'实时通信应用压力测试','持续一段时间','127.0.0.1','443','SMTP','Subject','Text',10,22),(2,'购物网站下单并发压力测试','同一时间','192.168.0.1','80','dns','Query ID','Text',7,14),(3,'用户登录并发压力测试','持续一段时间','10.0.0.2','3306','tcp','Server','Text',8,16);
+/*!40000 ALTER TABLE `TaskScript` ENABLE KEYS */;
+UNLOCK TABLES;
+/*!40103 SET TIME_ZONE=@OLD_TIME_ZONE */;
+
+/*!40101 SET SQL_MODE=@OLD_SQL_MODE */;
+/*!40014 SET FOREIGN_KEY_CHECKS=@OLD_FOREIGN_KEY_CHECKS */;
+/*!40014 SET UNIQUE_CHECKS=@OLD_UNIQUE_CHECKS */;
+/*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
+/*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
+/*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
+/*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;

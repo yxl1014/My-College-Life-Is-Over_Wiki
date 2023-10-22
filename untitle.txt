@@ -1,0 +1,70 @@
+create table if not exists email
+(
+    emailId       varchar(20) not null comment '邮件ID号'
+        primary key,
+    emailSender   varchar(30) not null comment '发送者邮箱地址',
+    emailReceiver varchar(30) null comment '收人邮箱地址',
+    date          timestamp   not null comment '发送日期',
+    content       blob        not null comment '邮件正文内容',
+    size          bigint      not null comment '邮件大小 单位Byte'
+);
+
+create table if not exists user0
+(
+    userId        varchar(20)       not null comment '用户系统ID'
+        primary key,
+    userPassword  varchar(20)       not null comment '用户密码',
+    userName      varchar(50)       not null comment '用户用户名',
+    userGender    tinyint(1)        not null comment '用户性别：男1 女0',
+    userBornDay   date              not null comment '用户出生年月日: 2000/12/1',
+    userIdCard    varchar(18)       not null comment '用户身份证号:18位',
+    userTelephone varchar(11)       not null comment '用户电话:11位纯数字',
+    userEmail     varchar(30)       not null comment '用户邮箱:xxx@qq.com',
+    userMoney     double  default 0 not null comment '用户余额',
+    userCompany   varchar(100)      not null comment '用户单位',
+    userHome      varchar(100)      not null comment '用户住址',
+    userIp        varchar(20)       not null comment '用户IP',
+    userType      tinyint default 1 not null comment '用户类型: 管理员0 普通1 会员2 超级会员3...'
+)
+    comment '用户表';
+
+create table if not exists notificationform
+(
+    formId        varchar(20) not null comment '表单单号'
+        primary key,
+    publisherId   varchar(20) not null comment '发布者ID',
+    publisherName varchar(20) not null comment '发布者姓名',
+    publishDate   timestamp   not null comment '发布时间',
+    content       blob        not null comment '公告单内容',
+    constraint notificationform_user0_null_fk
+        foreign key (publisherId) references user0 (userId),
+    constraint notificationform_user0_userName_fk
+        foreign key (publisherName) references user0 (userName)
+)
+    comment '公告单';
+
+create table if not exists transactionrecord
+(
+    transactionId    varchar(30)                not null comment '交易单号'
+        primary key,
+    senderId         varchar(20)                not null comment '发款方ID',
+    receiverId       varchar(20)                not null comment '收款方ID',
+    changedMoney     double                     not null comment '变动金额',
+    date             timestamp                  not null comment '交易时间',
+    restMoney        double                     not null comment '余额',
+    payWay           varchar(40)                not null comment '支付方式：余额 zfb  wx  bankCard',
+    transactionState varchar(40) default '成功' not null comment '交易状态 ：成功 失败 ',
+    transactionType  varchar(30)                not null comment '交易类型：充值 消费 转账 提现',
+    constraint transactionrecord_user0_null_fk
+        foreign key (senderId) references user0 (userId),
+    constraint transactionrecord_user0_null_fk1
+        foreign key (senderId) references user0 (userId),
+    constraint transactionrecord_user0_null_fk2
+        foreign key (receiverId) references user0 (userId)
+)
+    comment '交易记录';
+
+create index user0_userName_index
+    on user0 (userName)
+    comment '用于作为被其他表外键的引用对象';
+
